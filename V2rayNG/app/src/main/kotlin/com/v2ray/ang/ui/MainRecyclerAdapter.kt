@@ -184,14 +184,6 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
         }
     }
 
-    private fun shareFullContent(guid: String) {
-        if (AngConfigManager.shareFullContent2Clipboard(mActivity, guid) == 0) {
-            mActivity.toast(R.string.toast_success)
-        } else {
-            mActivity.toast(R.string.toast_failure)
-        }
-    }
-
     private  fun removeServer(guid: String,position:Int) {
         mActivity.mainViewModel.removeServer(guid)
         notifyItemRemoved(position)
